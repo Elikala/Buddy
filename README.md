@@ -4,7 +4,7 @@
 
 1. Clone or download the repository:
 
-git clone https://github.com/your-username/virtual-pet.git
+git clone https://github.com/Elikala/Buddy.git
 cd virtual-pet
 
 2. Make sure SASS is installed:
