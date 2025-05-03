@@ -3,13 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SASS Project</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <title>Kontaktform </title>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 
 <body>
-    <div>
-      <h1>Kontakt</h1>
+    <div class="container">
+      <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+        <button class="top-left"><a href="index.html">Tagasi</a></button>
+        <div class="contact-left-title">
+          <h2>Kirjuta meile!</h2>
+          <hr>
+        </div>
+        <input type="hidden" name="access_key" value="e381d274-f740-4097-8df2-2ce0d3d81630">
+        <input type="text" name="name" placeholder="Sinu nimi" class="contact-inputs" required>
+        <input type="email" name="email" placeholder="Sinu email" class="contact-inputs" required>
+        <textarea name="message" placeholder="Sõnum" class="contact-inputs" required></textarea>
+          <button type="submit">Saada</button>
+      </form>
+
+      <div class="contact-right">
+        <img src="media/Vector.png" alt="Kass ja Koer">
+      </div>
     </div>
 </body>
 </html>
