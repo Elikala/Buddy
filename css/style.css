@@ -2,6 +2,14 @@
   font-family: "Kavivanar-Regular";
   src: url(Kavivanar-Regular);
 }
+@media (max-width: 800px) {
+  .contact-inputs {
+    width: 80vw;
+  }
+  .contact-right {
+    display: none;
+  }
+}
 * {
   padding: 0;
   margin: 0;
