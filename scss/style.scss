@@ -17,7 +17,7 @@ $buttontext:#F3E5C5;
 
 body {
   font-family: 'Kavivanar-Regular';
-  background: linear-gradient(to right , $myColor, $secondColor)
+  background: $myColor
 }
 
 .container{
@@ -95,14 +95,6 @@ body {
   border: 2px solid $titleColor;
 }
 
-@media (max-width:800px) {
-  .contact-inputs{
-    width: 80vw;
-  }
-  .contact-right{
-    display: none;
-  }
-}
 
 
 button.top-left {
@@ -114,7 +106,6 @@ button.top-left {
   border-radius: 30px;
   padding: 10px 20px;
   cursor: pointer;
-  z-index: 1000;
 }
 
 button.top-left a {
@@ -122,4 +113,73 @@ button.top-left a {
   color: $buttontext;
   font-size: 16px;
   display: block;
+}
+
+.header {
+  margin-top: 80px;
+  margin-bottom: 40px;
+
+  h2 {
+    font-weight: 700;
+    color: $titleColor;
+    text-align: center;
+    font-size: 40px;
+    margin: 0;
+  }
+}
+
+.gamecontainer {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+}
+
+.animals {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-around;
+  gap: 200px;
+
+  .cat, .dog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cat {
+    img {
+      width: 150px; 
+      height: auto;
+    }
+
+    .kassinupp {
+      margin-top: 70px;
+    }
+  }
+  .dog {
+    img {
+      width: 200px; 
+      height: auto;
+    }
+
+    .koeranupp {
+      margin-top: 20px;
+    }
+  }
+}
+
+button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px 35px;
+  font-size: 22px;
+  color: $buttontext;
+  border: none;
+  border-radius: 30px;
+  background: $secondColor;
+  cursor: pointer;
 }

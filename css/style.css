@@ -11,8 +11,7 @@
 
 body {
   font-family: "Kavivanar-Regular";
-  background: -webkit-gradient(linear, left top, right top, from(#E8DAB9), to(#9D8964));
-  background: linear-gradient(to right, #E8DAB9, #9D8964);
+  background: #E8DAB9;
 }
 
 .container {
@@ -123,14 +122,6 @@ body {
   border: 2px solid #000;
 }
 
-@media (max-width: 800px) {
-  .contact-inputs {
-    width: 80vw;
-  }
-  .contact-right {
-    display: none;
-  }
-}
 button.top-left {
   position: absolute;
   top: 20px;
@@ -140,7 +131,6 @@ button.top-left {
   border-radius: 30px;
   padding: 10px 20px;
   cursor: pointer;
-  z-index: 1000;
 }
 
 button.top-left a {
@@ -148,4 +138,88 @@ button.top-left a {
   color: #F3E5C5;
   font-size: 16px;
   display: block;
+}
+
+.header {
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+.header h2 {
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+  font-size: 40px;
+  margin: 0;
+}
+
+.gamecontainer {
+  position: relative;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 60px;
+}
+
+.animals {
+  margin-top: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  gap: 200px;
+}
+.animals .cat, .animals .dog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.animals .cat img {
+  width: 150px;
+  height: auto;
+}
+.animals .cat .kassinupp {
+  margin-top: 70px;
+}
+.animals .dog img {
+  width: 200px;
+  height: auto;
+}
+.animals .dog .koeranupp {
+  margin-top: 20px;
+}
+
+button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px 35px;
+  font-size: 22px;
+  color: #F3E5C5;
+  border: none;
+  border-radius: 30px;
+  background: #9D8964;
+  cursor: pointer;
 }
