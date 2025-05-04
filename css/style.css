@@ -13,7 +13,8 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -23,15 +24,28 @@ body {
 
 .container {
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .contact-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
   gap: 20px;
 }
 
@@ -71,13 +85,33 @@ body {
   border: 2px solid #9D8964;
 }
 
+.contact-inputs::-webkit-input-placeholder {
+  color: #808080;
+}
+
+.contact-inputs::-moz-placeholder {
+  color: #808080;
+}
+
+.contact-inputs:-ms-input-placeholder {
+  color: #808080;
+}
+
+.contact-inputs::-ms-input-placeholder {
+  color: #808080;
+}
+
 .contact-inputs::placeholder {
   color: #808080;
 }
 
 .contact-left button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 10px 25px;
   font-size: 16px;
   color: #F3E5C5;
@@ -129,22 +163,39 @@ button.top-left a {
 .gamecontainer {
   position: relative;
   min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-top: 60px;
 }
 
 .animals {
   margin-top: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   gap: 200px;
 }
 .animals .cat, .animals .dog {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .animals .cat img {
   width: 150px;
@@ -162,9 +213,16 @@ button.top-left a {
 }
 
 button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 20px 35px;
   font-size: 22px;
   color: #F3E5C5;
@@ -177,7 +235,8 @@ button {
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -224,6 +283,7 @@ p {
   text-align: center;
   border-radius: 25px;
   padding: 12px 24px;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   font-family: "Laila", sans-serif;
   cursor: pointer;
@@ -242,18 +302,27 @@ p {
 }
 
 header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 15px 40px;
   background-color: #B79F78;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 100;
 }
 header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 2rem;
 }
@@ -261,12 +330,15 @@ header nav ul a {
   text-decoration: none;
   color: #333333;
   font-weight: 500;
+  -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
 header nav ul a:hover {
   color: #746143;
 }
 header .profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -280,8 +352,12 @@ header .profile {
 }
 
 .hero-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 40px;
   min-height: 500px;
 }
@@ -319,13 +395,20 @@ header .profile {
 }
 
 .steps-section .steps-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-top: 40px;
 }
 .steps-section .steps-container .step-item {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   min-width: 200px;
   max-width: 250px;
   margin: 0 auto 30px;
@@ -352,24 +435,35 @@ header .profile {
 }
 
 .audience-section .audience-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 30px;
   margin-top: 40px;
 }
 .audience-section .audience-cards .audience-card {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   min-width: 250px;
   max-width: 300px;
   text-align: center;
   background-color: #B79F78;
   border-radius: 25px;
   padding: 25px;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
   transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 .audience-section .audience-cards .audience-card:hover {
-  transform: translateY(-5px);
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
 }
 .audience-section .audience-cards .audience-card .audience-icon {
   width: 80px;
@@ -428,8 +522,12 @@ header .profile {
 .main-footer .footer-content {
   max-width: 1200px;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .main-footer .footer-content .footer-info {
   margin-bottom: 30px;
@@ -447,12 +545,15 @@ header .profile {
   text-decoration: none;
   color: #333333;
   font-weight: 500;
+  -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
 .main-footer .footer-content .footer-menu a:hover {
   color: #746143;
 }
 .main-footer .footer-content .social-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 15px;
   margin-top: 10px;
@@ -464,41 +565,66 @@ header .profile {
 
 @media (max-width: 768px) {
   .hero-section {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     text-align: center;
   }
   .hero-section .hero-content {
-    order: 1;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
   }
   .hero-section .hero-media {
-    order: 0;
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
     margin-bottom: 30px;
   }
   .steps-container {
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .steps-container .step-item {
     max-width: 400px;
   }
   .header {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     gap: 15px;
   }
   .header .main-nav .nav-links {
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
   .main-content {
     margin-top: 12rem;
   }
   .footer-content {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 2rem;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .footer-content .footer-info {
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     text-align: center;
   }
   .footer-content .footer-info p {
@@ -519,17 +645,31 @@ header .profile {
     font-size: 1.3rem;
   }
   .button-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .button-group .btn {
     width: 100%;
   }
   .cta-section .cta-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .cta-section .cta-buttons .btn {
     width: 100%;
@@ -538,5 +678,3 @@ header .profile {
     width: 100%;
   }
 }
-
-/*# sourceMappingURL=style.css.map */
