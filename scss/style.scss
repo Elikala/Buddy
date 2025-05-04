@@ -1,3 +1,204 @@
+$myColor:#E8DAB9;
+$secondColor:#9D8964;
+$titleColor:#000;
+$inputColor: #808080;
+$buttontext:#F3E5C5;
+
+@font-face {
+  font-family: 'Kavivanar-Regular';
+  src: url(Kavivanar-Regular);
+}
+
+@media (max-width:800px) {
+  .contact-inputs{
+    width: 80vw;
+  }
+  .contact-right{
+    display: none;
+  }
+  
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Kavivanar-Regular';
+  background: $myColor
+}
+
+.container{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.contact-left{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+}
+
+.contact-left-title h2{
+  font-weight: 700;
+  color: $titleColor;
+  font-size: 60px;
+  margin-bottom: 5px;
+}
+
+.contact-left-title hr{
+  border: none;
+  width: 120px;
+  height: 5px;
+  background-color: $titleColor;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.contact-inputs{
+  width: 400px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  padding-left: 25px;
+  font-weight: 500;
+  color: $inputColor;
+}
+
+.contact-left textarea{
+  height: 140px;
+  padding-top: 15px;
+}
+
+.contact-inputs:focus{
+  border: 2px solid $secondColor;
+}
+
+.contact-inputs::placeholder{
+  color: $inputColor;
+}
+
+.contact-left button{
+  display: flex;
+  align-items: center;
+  padding: 10px 25px;
+  font-size: 16px;
+  color: $buttontext;
+  gap: 10px;
+  border: none;
+  border-radius: 30px;
+  background: $secondColor;
+  cursor: pointer;
+}
+
+.contact-right img{
+  width: 500px;
+}
+
+.contact-left:focus{
+  border: 2px solid $titleColor;
+}
+
+
+
+button.top-left {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: $secondColor;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button.top-left a {
+  text-decoration: none;
+  color: $buttontext;
+  font-size: 16px;
+  display: block;
+}
+
+.header {
+  margin-top: 80px;
+  margin-bottom: 40px;
+
+  h2 {
+    font-weight: 700;
+    color: $titleColor;
+    text-align: center;
+    font-size: 40px;
+    margin: 0;
+  }
+}
+
+.gamecontainer {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+}
+
+.animals {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-around;
+  gap: 200px;
+
+  .cat, .dog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cat {
+    img {
+      width: 150px; 
+      height: auto;
+    }
+
+    .kassinupp {
+      margin-top: 70px;
+    }
+  }
+  .dog {
+    img {
+      width: 200px; 
+      height: auto;
+    }
+
+    .koeranupp {
+      margin-top: 20px;
+    }
+  }
+}
+
+button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px 35px;
+  font-size: 22px;
+  color: $buttontext;
+  border: none;
+  border-radius: 30px;
+  background: $secondColor;
+  cursor: pointer;
+}
+
+
+
+
+
 $primary-color: #d0bd94;
 $secondary-color: #B79F78;;
 $dark-color: #746143;
