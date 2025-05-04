@@ -1,196 +1,476 @@
-$myColor:#E8DAB9;
-$secondColor:#9D8964;
-$titleColor:#000;
-$inputColor: #808080;
-$buttontext:#F3E5C5;
-
-@font-face {
-  font-family: 'Kavivanar-Regular';
-  src: url(Kavivanar-Regular);
-}
-
-@media (max-width:800px) {
-  .contact-inputs{
-    width: 80vw;
-  }
-  .contact-right{
-    display: none;
-  }
-  
-}
-
+$primary-color: #d0bd94;
+$secondary-color: #B79F78;;
+$dark-color: #746143;
+$text-color: #333333;   
+$button-text: #F3E5C5;
+$body-font: 'Laila', sans-serif;
+$container-width: 1200px;
+$border-radius: 25px;
 
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Kavivanar-Regular';
-  background: $myColor
+  font-family: $body-font;
+  background-color: $primary-color;
+  color: $text-color;
+  line-height: 1.6;
 }
 
-.container{
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+// Typography
+h1, h2 {
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
-.contact-left{
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  gap: 20px;
+h1 {
+  font-weight: 600;
+  font-size: 2.5rem;
+  text-align: center;
+
 }
 
-.contact-left-title h2{
+h2 {
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+
+}
+
+p {
+  font-weight: 400;
+  margin-bottom: 1rem;
+  text-align: center;
+
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
   font-weight: 700;
-  color: $titleColor;
-  font-size: 60px;
-  margin-bottom: 5px;
+  margin-top: 5rem;
 }
 
-.contact-left-title hr{
-  border: none;
-  width: 120px;
-  height: 5px;
-  background-color: $titleColor;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-
-.contact-inputs{
-  width: 400px;
-  height: 50px;
-  border: none;
-  border-radius: 10px;
-  outline: none;
-  padding-left: 25px;
+.btn {
+  display: inline-block;
   font-weight: 500;
-  color: $inputColor;
+  text-align: center;
+  border-radius: $border-radius;
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+  font-family: $body-font;
+
+  cursor: pointer;
+    &.btn-primary {
+      background-color: $secondary-color;
+      
+      &:hover {
+        background-color: $dark-color;
+      }
+    }
+    
+    &.btn-secondary {
+      border: 2px solid $secondary-color;
+      
+      &:hover {
+        background-color: $secondary-color;
+      }
+    }
 }
 
-.contact-left textarea{
-  height: 140px;
-  padding-top: 15px;
-}
 
-.contact-inputs:focus{
-  border: 2px solid $secondColor;
-}
-
-.contact-inputs::placeholder{
-  color: $inputColor;
-}
-
-.contact-left button{
+// Header
+header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 10px 25px;
-  font-size: 16px;
-  color: $buttontext;
-  gap: 10px;
-  border: none;
-  border-radius: 30px;
-  background: $secondColor;
-  cursor: pointer;
+  padding: 15px 40px;
+  background-color: $secondary-color;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+
+  nav {
+    ul {
+      display: flex;
+      gap: 2rem;
+
+      a {
+        text-decoration: none;
+        color: $text-color;
+        font-weight: 500;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $dark-color;
+        }
+      }
+    }
+  }
+
+  .profile {
+    display: flex;
+
+  }
+
 }
 
-.contact-right img{
-  width: 500px;
-}
-
-.contact-left:focus{
-  border: 2px solid $titleColor;
-}
-
-
-
-button.top-left {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background-color: $secondColor;
-  border: none;
-  border-radius: 30px;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-button.top-left a {
-  text-decoration: none;
-  color: $buttontext;
-  font-size: 16px;
-  display: block;
-}
-
-.header {
-  margin-top: 80px;
-  margin-bottom: 40px;
-
-  h2 {
-    font-weight: 700;
-    color: $titleColor;
-    text-align: center;
-    font-size: 40px;
-    margin: 0;
+// Main content
+.main-content {
+  max-width: $container-width;
+  margin: 5rem auto;
+  padding: 0 20px;
+  
+  section {
+    padding: 40px 0;
   }
 }
 
-.gamecontainer {
-  position: relative;
-  min-height: 100vh;
+
+// Hero section
+.hero-section {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding-top: 60px;
+  gap: 40px;
+  min-height: 500px;
+  
+  .hero-content {
+    max-width: 500px;
+
+    .hero-title {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      text-align: left;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    
+    .hero-text {
+      margin-bottom: 30px;
+      text-align: left;
+    }
+
+    .btn {
+      margin: 0.5rem;
+    }
+  }
+  
+  .hero-media {
+    text-align: center;
+    
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
 }
 
-.animals {
-  margin-top: 100px;
-  display: flex;
-  justify-content: space-around;
-  gap: 200px;
+.about-section {
+  p {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
 
-  .cat, .dog {
+// Steps section
+.steps-section {
+  .steps-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 40px;
+    
+    .step-item {
+      flex: 1;
+      min-width: 200px;
+      max-width: 250px;
+      margin: 0 auto 30px;
+      text-align: center;
+      
+      .step-number {
+        width: 70px;
+        height: 70px;
+        background-color: $secondary-color;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        
+        span {
+          font-size: 2rem;
+          font-weight: 700;
+        }
+      }
+      
+      .step-text {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.why-section {
+  p {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+// Audience section
+.audience-section {
+  .audience-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    
+    .audience-card {
+      flex: 1;
+      min-width: 250px;
+      max-width: 300px;
+      text-align: center;
+      background-color: $secondary-color;
+      border-radius: $border-radius;
+      padding: 25px;
+      transition: transform 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-5px);
+      }
+      
+      .audience-icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+      }
+      
+    }
+  }
+}
+
+.motivation-section {
+  p {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+// CTA section
+.cta-section {
+  text-align: center;
+  
+  .cta-buttons {
+    margin: 30px 0;
+    
+    .btn {
+      margin: 0 10px 10px;
+    }
+  }
+}
+
+// Newsletter section
+.newsletter-section {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  
+  p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+  }
+  
+  .newsletter-form {
+    max-width: 500px;
+    margin: 0 auto;
+    
+    
+    .form-group {
+      margin-bottom: 20px;
+      
+      .form-label {
+        display: block;
+        margin-bottom: 10px;
+        text-align: left;
+      }
+      
+      .form-input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid $secondary-color;
+        border-radius: $border-radius;
+        font-family: $body-font;
+      }
+    }
+  }
+}
+
+
+// Footer
+.main-footer {
+  background-color: $secondary-color;
+  padding: 40px 20px;
+  
+  .footer-content {
+    max-width: $container-width;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    
+    .footer-info {
+      margin-bottom: 30px;
+      p {
+        margin-bottom: 10px;
+        text-align: left;
+      }
+    }
+    
+    .footer-title {
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+      text-align: left;
+    }
+        
+    .footer-menu {
+      a {
+        text-decoration: none;
+        color: $text-color;
+        font-weight: 500;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $dark-color;
+        }
+      }
+    }
+        
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+
+      .media-icon {
+        height: 2rem;
+        width: 2rem;
+      }
+    }
+    
+  }
+}
+
+// Media queries for responsiveness
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    
+    .hero-content {
+      order: 1;
+    }
+    
+    .hero-media {
+      order: 0;
+      margin-bottom: 30px;
+    }
+  }
+  
+  .steps-container {
+    flex-direction: column;
+    align-items: center;
+    
+    .step-item {
+      max-width: 400px;
+    }
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 15px;
+    
+    .main-nav {
+      .nav-links {
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  .main-content {
+    margin-top: 12rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+
+    .footer-info {
+      align-items: center;
+      text-align: center;
+      p {
+        text-align: center;
+      }
+    }
+
+    .footer-title {
+      text-align: center;
+    }
+  }
+}
+
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .hero-section {
+    .hero-content {
+      .hero-title {
+        font-size: 2rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.3rem;
+      }
+    }
+  }
+  
+  .button-group {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  .cat {
-    img {
-      width: 150px; 
-      height: auto;
-    }
-
-    .kassinupp {
-      margin-top: 70px;
+    
+    .btn {
+      width: 100%;
     }
   }
-  .dog {
-    img {
-      width: 200px; 
-      height: auto;
-    }
 
-    .koeranupp {
-      margin-top: 20px;
+  .cta-section {
+    .cta-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+      .btn {
+        width: 100%;
+      }
     }
   }
-}
 
-button {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 20px 35px;
-  font-size: 22px;
-  color: $buttontext;
-  border: none;
-  border-radius: 30px;
-  background: $secondColor;
-  cursor: pointer;
+  .newsletter-section {
+    .newsletter-form {
+      .btn {
+        width: 100%;
+      }
+    }
+  }
 }

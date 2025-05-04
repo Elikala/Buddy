@@ -4,20 +4,168 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SASS Project</title>
+  <link rel="icon" type="image/x-icon" href="media/favicon.ico">
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
 </head>
+
 <body>
   
+  <header class="header">
+    <div class="logo">
+      <img src="/media/BuddyLogo.png" alt="Buddy Logo" height="50px">
+    </div>
+    <nav class="nav">
+      <ul class="nav-links">
+        <a href="#avaleht">Avaleht</a>
+        <a href="play">Alusta mängu</a>
+        <a href="kontakt">Kontakt</a>
+        <a href="#kontakt">KKK/Abi</a>
+      </ul>
+    </nav>
+    <div class="profile">
+      <img src="/media/Profile.png" alt="Profiili ikoon" height="50px">
+    </div>
+  </header>
 
-  <h1>Avaleht</h1>
+  <main class="main-content">
+    <section id="hero" class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">Tere tulemast Buddy maailma!</h1>
+        <h2 class="hero-subtitle">Tee oma päevad tõhusaks ja hoolitse oma lemmiku eest!</h2>
+        <p class="hero-text">Täida ülesandeid, kogu preemiaid ja aita oma virtuaalsel lemmikul kasvada õnnelikuks ja terveks.</p>
+        <div class="button-group">
+          <button class="btn btn-primary">Loon omale lemmik</button>
+          <button class="btn btn-secondary">Lemmik on juba olemas?</button>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="/media/KassJaKoer.png" alt="Kass ja koer">
+      </div>
+    </section>
 
-  <div>
-    <h1>Welcome to Buddy</h1>
-    <h1>Alusta oma lemmiku eest hoolitsemisega</h1>
-  </div>
+    <section id="about" class="about-section">
+      <h2 class="section-title">Mis on Buddy?</h2>
+      <div class="about-content">
+        <p class="text-center">Buddy on veebirakendus, mis ühendab igapäevaste ülesannete täitmise mängulise looma eest hoolitsemise kogemusega.</p>
+        <p class="text-center">Kas oled tundnud, et igapäevased toimetused tunduvad tüütud või kergesti ununevad? Buddy aitab sul neid rõõmuga teha!</p>
+      </div>
+    </section>
 
-  
+    <section id="how-it-works" class="steps-section">
+      <h2 class="section-title">Kuidas see toimib?</h2>
+      <div class="steps-container">
+        <div class="step-item">
+          <div class="step-number">
+            <h1>1</h1>
+          </div>
+          <p class="step-text">Vali oma lemmik – armas kass või rõõmus koer</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">
+            <h1>2</h1>
+          </div>
+          <p class="step-text">Pane talle nimi ja loo side</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">
+            <h1>3</h1>
+          </div>
+          <p class="step-text">Lisa oma päeva ülesanded, mida täitma hakkad</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">
+            <h1>4</h1>
+          </div>
+          <p class="step-text">Täites ülesandeid saad preemiaks toitu või mänguasju</p>
+        </div>
+      </div>
+    </section>
 
+    <section id="why-it-works" class="why-section">
+      <h2 class="section-title">Miks see töötab?</h2>
+      <p class="text-center">Buddy rakendab psühholoogilist põhimõtet "kohene tasu" – iga ülesande eest saad preemia, mis annab sulle võimaluse midagi vahvat teha: toita, mängida või aidata oma loomal kasvada.</p>
+    </section>
 
+    <section id="who-for" class="audience-section">
+      <h2 class="section-title">Kellele see sobib?</h2>
+      <div class="audience-cards">
+        <div class="audience-card">
+          <img src="/media/Student.png" alt="Õpilase mütsi ikoon" class="audience-icon">
+          <p class="audience-text">Õpilastele, kes vajavad motivatsiooni õppimiseks</p>
+        </div>
+        <div class="audience-card">
+          <img src="/media/Tootaja.png" alt="Inimene arvutiga ikoon" class="audience-icon">
+          <p class="audience-text">Töötajatele, kes soovivad luua järjekindlaid harjumusi</p>
+        </div>
+        <div class="audience-card">
+          <img src="/media/AnimalLover.png" alt="Loomaarmastaja ikoon" class="audience-icon">
+          <p class="audience-text">Kõigile, kes armastavad virtuaallemmikuid ja mängulist lähenemist ajaplaneerimisele</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="motivation" class="motivation-section">
+      <h2 class="section-title">Kasvata, hoolitse, saavuta!</h2>
+      <p class="text-center">Buddy ei ole lihtsalt mäng — ta on väike virtuaalne sõber, kes aitab sul paremini elada. Iga tehtud ülesanne on samm hoolivama, organiseerituma elu poole. Ja Buddy tänab sind selle eest iga päev!</p>
+    </section>
+
+    <section id="cta" class="cta-section">
+      <h2 class="section-title">Alusta looma valimisega ja loo oma esimene ülesannete nimekiri!</h2>
+      <div class="cta-buttons">
+        <button class="btn btn-primary">Alusta kohe!</button>
+        <button class="btn btn-secondary">Lemmik on juba olemas?</button>
+      </div>
+    </section>
+
+    <section id="newsletter" class="newsletter-section">
+      <h2 class="section-title">Tule Buddy siseringi!</h2>
+      <p class="text-center">Liitu meie uudiskirjaga ja saa iga nädal nippe, väljakutseid ning inspiratsiooni, et oma ülessandeid täita – ja Buddy õnnelikuks teha!</p>
+      <form class="newsletter-form">
+        <div class="form-group">
+          <label for="mail" class="form-label">Sisesta oma meiliaadress!</label>
+          <input type="email" id="mail" name="mail" class="form-input" placeholder="mari.mets@gmail.com">
+        </div>
+        <button class="btn btn-primary">Liitu</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-info">
+        <p class="footer-title">Kasvata oma virtuaalset lemmikut, täites päriselu ülesandeid!</p>
+        <p>Kontakt: info@buddyapp.ee</p>
+        <p>Buddy App © 2025</p>
+      </div>
+
+      
+        <div class="footer-links">
+          <p class="footer-title">Avaleht</p>
+          <ul class="footer-menu">
+            <li><a href="#avaleht">Avaleht</a></li>
+            <li><a href="play.html">Alusta mängu</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="#kontakt">KKK/Abi</a></li>
+            <li><a href="#privacy" class="legal-link">Privaatsuspoliitika</a></li>
+            <li><a href="#terms" class="legal-link">Kasutustingimused</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-social">
+          <p class="footer-title">Sotsiaalmeedia:</p>
+          <div class="social-links">
+            <img src="/media/facebook.png" alt="Facebook logo" href="#" class="media-icon">
+            <img src="media/instagram.png" alt="Instagram logo" href="#" class="media-icon">
+            <img src="media/tiktok.png" alt="tiktok logo" href="#" class="media-icon">
+          </div>
+        </div>
+
+      
+    </div>
+  </footer>
 </body>
 </html>
