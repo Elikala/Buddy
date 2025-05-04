@@ -1,14 +1,17 @@
+/*Värvid mida kasutan play ja kontakt lehel*/
 $myColor:#E8DAB9;
 $secondColor:#9D8964;
 $titleColor:#000;
 $inputColor: #808080;
 $buttontext:#F3E5C5;
 
+/*Play ja kontakt htmlil olev font*/
 @font-face {
   font-family: 'Kavivanar-Regular';
   src: url(Kavivanar-Regular);
 }
 
+/*Mobiilivaate jaoks kohandatud suurus, kontaktformis kaob pilt ära*/
 @media (max-width:800px) {
   .contact-inputs{
     width: 80vw;
@@ -19,18 +22,20 @@ $buttontext:#F3E5C5;
   
 }
 
-
+/*Üleüldine kohandus kontakti ja play lehe jaoks*/
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+/*Üleüldine taust ja font play ja kontakti lehe jaoks*/
 body {
   font-family: 'Kavivanar-Regular';
   background: $myColor
 }
 
+/*Kontakt lehe kohandused*/
 .container{
   height: 100vh;
   display: flex;
@@ -38,6 +43,7 @@ body {
   justify-content: space-evenly;
 }
 
+/*Kontakt lehe vasakpoolse osa kohandused*/
 .contact-left{
   display: flex;
   flex-direction: column;
@@ -45,6 +51,7 @@ body {
   gap: 20px;
 }
 
+/*Kontaktlehe vasakul pool asuv pealkiri*/
 .contact-left-title h2{
   font-weight: 700;
   color: $titleColor;
@@ -52,6 +59,7 @@ body {
   margin-bottom: 5px;
 }
 
+/*Kontaktlehe vasakul pool asuv pealkirja all olev joon*/
 .contact-left-title hr{
   border: none;
   width: 120px;
@@ -61,6 +69,7 @@ body {
   margin-bottom: 20px;
 }
 
+/*Kontaktlehe vasakul pool asuvad inputide kohandused*/
 .contact-inputs{
   width: 400px;
   height: 50px;
@@ -72,19 +81,22 @@ body {
   color: $inputColor;
 }
 
+/*Kontaktlehe vasakul pool asuv sõnumi textarea kohandus*/
 .contact-left textarea{
   height: 140px;
   padding-top: 15px;
 }
 
+/*Kontaktlehe vasakul pool asuvate inputide kohal hoverides, styling*/
 .contact-inputs:focus{
   border: 2px solid $secondColor;
 }
 
+/*Placeholder input tekstile*/
 .contact-inputs::placeholder{
   color: $inputColor;
 }
-
+/*Kontaktlehe vasakul pool asuva nupu styling*/
 .contact-left button{
   display: flex;
   align-items: center;
@@ -98,6 +110,7 @@ body {
   cursor: pointer;
 }
 
+/*Kontaktlehe paremal pool asuva pildi suurus*/
 .contact-right img{
   width: 500px;
 }
@@ -126,6 +139,7 @@ button.top-left a {
   display: block;
 }
 
+/*Play lehe pealkirja styling */
 .headtitle {
   margin-top: 80px;
   margin-bottom: 40px;
@@ -138,7 +152,7 @@ button.top-left a {
     margin: 0;
   }
 }
-
+/*Play lehe sisu styling*/
 .gamecontainer {
   position: relative;
   min-height: 100vh;
@@ -181,7 +195,7 @@ button.top-left a {
     }
   }
 }
-
+/*Nupu styling*/
 button {
   display: flex;
   flex-direction: row;
