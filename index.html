@@ -9,11 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
 </head>
 
 <body>
-  
   <header class="header">
     <div class="logo">
       <img src="/media/BuddyLogo.png" alt="Buddy Logo" height="50px">
@@ -124,9 +122,10 @@
     <section id="newsletter" class="newsletter-section">
       <h2 class="section-title">Tule Buddy siseringi!</h2>
       <p class="text-center">Liitu meie uudiskirjaga ja saa iga nädal nippe, väljakutseid ning inspiratsiooni, et oma ülessandeid täita – ja Buddy õnnelikuks teha!</p>
-      <form class="newsletter-form">
+      <form class="newsletter-form" action="https://api.web3forms.com/submit" method="POST">
         <div class="form-group">
           <label for="mail" class="form-label">Sisesta oma meiliaadress!</label>
+          <input type="hidden" name="access_key" value="6d842018-678f-4b5e-9de9-57ba324fb59a">
           <input type="email" id="mail" name="mail" class="form-input" placeholder="mari.mets@gmail.com">
         </div>
         <button class="btn btn-primary">Liitu</button>
