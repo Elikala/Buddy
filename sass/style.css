@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: "Laila", sans-serif;
+  font-family: "Laila";
   background-color: #d0bd94;
   color: #333333;
   line-height: 1.6;
@@ -478,7 +478,7 @@ button.top-left a {
     flex-wrap: wrap;
   }
   .main-content {
-    margin-top: 12rem;
+    margin-top: 2rem;
   }
   .footer-content {
     flex-direction: column;
