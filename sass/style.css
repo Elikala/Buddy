@@ -390,12 +390,33 @@ button.top-left a {
   padding-top: 60px;
 }
 
+@media (max-width: 768px) {
+  .animals {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px; 
+    flex-wrap: wrap; 
+  }
+
+  .animals .cat img,
+  .animals .dog img {
+    width: 120px; /* väiksemad pildid mobiilis */
+  }
+
+  .animals .cat .kassinupp,
+  .animals .dog .koeranupp {
+    margin-top: 20px;
+  }
+}
+
+
 .animals {
   margin-top: 100px;
   display: flex;
   justify-content: space-around;
-  gap: 200px;
+  gap: 100px; /* enne oli 200px */
 }
+
 .animals .cat,
 .animals .dog {
   display: flex;
