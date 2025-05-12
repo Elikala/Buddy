@@ -13,6 +13,26 @@ $container-width: 1200px
   padding: 0
   box-sizing: border-box
 
+// Mixin'd kasutamiseks
+@mixin transition($property, $duration)
+  transition: $property $duration ease
+
+@mixin button-styles($bg-color, $hover-color, $text-color)
+  display: inline-block
+  font-weight: 500
+  text-align: center
+  border-radius: $border-radius
+  padding: 12px 24px
+  font-family: inherit
+  cursor: pointer
+  color: $text-color
+  background-color: $bg-color
+  border: none
+  @include transition(all, 0.3s)
+
+  &:hover
+    background-color: $hover-color
+
 // Põhilehe stiilid
 body
   font-family: 'Laila'
@@ -51,28 +71,16 @@ p
 
 // Nupud - ühtlustatud stiil
 .btn
-  display: inline-block
-  font-weight: 500
-  text-align: center
-  border-radius: $border-radius
-  padding: 12px 24px
-  transition: all 0.3s ease
-  font-family: inherit
-  cursor: pointer
-  color: $text-color
-  
+  @include button-styles($secondary-color, $dark-color, $text-color)
+
   &.btn-primary
-    background-color: $secondary-color
-    border: none
-    
-    &:hover
-      background-color: $dark-color
+    @include button-styles($secondary-color, $dark-color, $text-color)
 
   &.btn-secondary
     border: 2px solid $secondary-color
     background-color: $primary-color
+    @include transition(background-color, 0.3s)
 
-    
     &:hover
       background-color: $secondary-color
 
@@ -99,7 +107,7 @@ header
         text-decoration: none
         color: $text-color
         font-weight: 500
-        transition: color 0.3s ease
+        @include transition(color, 0.3s)
 
         &:hover
           color: $dark-color
@@ -293,7 +301,7 @@ header
         text-decoration: none
         color: $text-color
         font-weight: 500
-        transition: color 0.3s ease
+        @include transition(color, 0.3s)
 
         &:hover
           color: $dark-color
@@ -433,7 +441,7 @@ button.top-left
     .koeranupp
       margin-top: 20px
 
-@media (max-width: 768px)
+ @media (max-width: 768px)
   .animals
     flex-direction: row
     justify-content: center
@@ -473,185 +481,4 @@ button.top-left
 
     .hero-media
       order: 0
-      margin-bottom: 30px
-
-  .steps-container
-    flex-direction: column
-    align-items: center
-
-    .step-item
-      max-width: 400px
-
-  header
-    flex-direction: row
-    gap: 15px
-
-    nav
-      .nav-links
-        flex-wrap: wrap
-
-  .main-content
-    margin-top: 2rem
-
-  .footer-content
-    flex-direction: column
-    display: flex
-    gap: 2rem
-    align-items: center
-
-    .footer-info
-      align-items: center
-      text-align: center
-      
-      p
-        text-align: center
-
-    .footer-title
-      text-align: center
-
-// Mobiilse menüü stiilid
-.header-mobile
-  display: none
-  align-items: center
-  gap: 1rem
-  z-index: 1001
-  cursor: pointer
-
-  .burger-menu img
-    height: 30px
-    width: auto
-    transition: opacity 0.3s ease
-
-  .close-menu
-    display: none
-    position: fixed
-    top: 20px
-    right: 20px
-    
-    img
-      height: 25px
-      width: 25px
-
-  &.active
-    .burger-menu
-      display: none
-    
-    .close-menu
-      display: block
-
-@media (max-width: 768px)
-  header
-    position: relative
-    display: flex
-    justify-content: space-between
-    align-items: center
-    padding: 15px 20px
-
-    .logo
-      order: 1
-      
-      img
-        height: 40px
-
-    .header-mobile
-      order: 3
-      display: flex
-
-    .profile
-      display: none
-
-    nav
-      position: fixed
-      top: 0
-      left: 0
-      width: 100%
-      height: 100vh
-      background-color: rgba($secondary-color, 0.98)
-      display: flex
-      flex-direction: column
-      justify-content: flex-start
-      align-items: center
-      transform: translateX(100%)
-      transition: transform 0.3s ease-in-out
-      z-index: 1000
-      padding-top: 6rem
-
-      // Lisa profiilipilt menüüsse
-      &::before
-        content: ''
-        display: block
-        width: 80px
-        height: 80px
-        background-image: url('/media/Profile.svg')
-        background-size: contain
-        background-repeat: no-repeat
-        background-position: center
-        margin-bottom: 2rem
-        border-radius: 50%
-
-      .nav-links
-        flex-direction: column
-        align-items: center
-        gap: 1.5rem
-        width: 100%
-
-        li
-          width: 100%
-          text-align: center
-
-        a
-          display: block
-          font-size: 1.3rem
-          color: $text-color
-          padding: 0.8rem
-          transition: all 0.3s ease
-
-          &:hover
-            color: $dark-color
-            background-color: rgba($primary-color, 0.2)
-            border-radius: $border-radius
-
-      &.active
-        transform: translateX(0)
-
-@media (min-width: 769px)
-  header
-    .header-mobile
-      display: none
-
-    .profile
-      display: flex
-
-@media (max-width: 480px)
-  .section-title
-    font-size: 1.8rem
-
-  .hero-section
-    .hero-content
-      .hero-title
-        font-size: 2rem
-
-      .hero-subtitle
-        font-size: 1.3rem
-
-  .button-group
-    display: flex
-    flex-direction: column
-    align-items: center
-
-    .btn
-      width: 100%
-
-  .cta-section
-    .cta-buttons
-      display: flex
-      flex-direction: column
-      align-items: center
-
-      .btn
-        width: 100%
-
-  .newsletter-section
-    .newsletter-form
-      .btn
-        width: 100%
+      margin-bottom
