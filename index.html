@@ -9,25 +9,48 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script>
+  // Laadib headeri sisu
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+      
+      // Burgermenüü funktsionaalsus pärast headeri laadimist
+      const burgerMenu = document.querySelector('.burger-menu');
+      const closeMenu = document.querySelector('.close-menu');
+      const headerMobile = document.querySelector('.header-mobile');
+      const nav = document.querySelector('.nav');
+      
+      // Avab menüü
+      burgerMenu.addEventListener('click', function() {
+        headerMobile.classList.add('active');
+        nav.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+      
+      // Sulgeb menüü
+      closeMenu.addEventListener('click', function() {
+        headerMobile.classList.remove('active');
+        nav.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+      
+      // Sulgeb menüü kui linki klikitakse
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          headerMobile.classList.remove('active');
+          nav.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      });
+    });
+</script>
 </head>
 
 <body>
-  <header class="header">
-    <div class="logo">
-      <img src="/media/BuddyLogo.png" alt="Buddy Logo" height="50px">
-    </div>
-    <nav class="nav">
-      <ul class="nav-links">
-        <a href="#avaleht">Avaleht</a>
-        <a href="play.html">Alusta mängu</a>
-        <a href="kontakt.html">Kontakt</a>
-        <a href="#">KKK/Abi</a>
-      </ul>
-    </nav>
-    <div class="profile">
-      <img src="/media/Profile.png" alt="Profiili ikoon" height="50px">
-    </div>
-  </header>
+
+  <div id="header-placeholder"></div>
 
   <main class="main-content">
     <section id="hero" class="hero-section">
@@ -36,7 +59,7 @@
         <h2 class="hero-subtitle">Tee oma päevad tõhusaks ja hoolitse oma lemmiku eest!</h2>
         <p class="hero-text">Täida ülesandeid, kogu preemiaid ja aita oma virtuaalsel lemmikul kasvada õnnelikuks ja terveks.</p>
         <div class="button-group">
-          <button class="btn btn-primary">Loon omale lemmik</button>
+          <button class="btn btn-primary">Loo omale lemmik</button>
           <button class="btn btn-secondary">Lemmik on juba olemas?</button>
         </div>
       </div>
@@ -166,5 +189,7 @@
       
     </div>
   </footer>
+
+
 </body>
 </html>

@@ -24,7 +24,7 @@
 /*Üleüldine taust ja font play ja kontakti lehe jaoks*/
 body {
   font-family: "Kavivanar-Regular";
-  background: #E8DAB9;
+  background-color: #E8DAB9;
 }
 
 /*Kontakt lehe kohandused*/
@@ -46,7 +46,7 @@ body {
 /*Kontaktlehe vasakul pool asuv pealkiri*/
 .contact-left-title h2 {
   font-weight: 700;
-  color: #000;
+  color: #000000;
   font-size: 60px;
   margin-bottom: 5px;
 }
@@ -56,7 +56,7 @@ body {
   border: none;
   width: 120px;
   height: 5px;
-  background-color: #000;
+  background-color: #000000;
   border-radius: 10px;
   margin-bottom: 20px;
 }
@@ -99,7 +99,7 @@ body {
   gap: 10px;
   border: none;
   border-radius: 30px;
-  background: #9D8964;
+  background-color: #9D8964;
   cursor: pointer;
 }
 
@@ -109,7 +109,7 @@ body {
 }
 
 .contact-left:focus {
-  border: 2px solid #000;
+  border: 2px solid #000000;
 }
 
 button.top-left {
@@ -137,7 +137,7 @@ button.top-left a {
 }
 .headtitle h2 {
   font-weight: 700;
-  color: #000;
+  color: #000000;
   text-align: center;
   font-size: 40px;
   margin: 0;
@@ -190,7 +190,7 @@ button {
   color: #F3E5C5;
   border: none;
   border-radius: 30px;
-  background: #9D8964;
+  background-color: #9D8964;
   cursor: pointer;
 }
 
@@ -503,7 +503,7 @@ header .profile {
     max-width: 400px;
   }
   .header {
-    flex-direction: column;
+    flex-direction: row;
     gap: 15px;
   }
   .header .main-nav .nav-links {
@@ -557,6 +557,119 @@ header .profile {
   }
   .newsletter-section .newsletter-form .btn {
     width: 100%;
+  }
+}
+.header-mobile {
+  display: none;
+  align-items: center;
+  gap: 1rem;
+  z-index: 1001;
+  cursor: pointer;
+}
+.header-mobile .burger-menu img {
+  height: 30px;
+  width: auto;
+  transition: opacity 0.3s ease;
+}
+.header-mobile .close-menu {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+.header-mobile .close-menu img {
+  height: 25px;
+  width: 25px;
+}
+.header-mobile.active .burger-menu {
+  display: none;
+}
+.header-mobile.active .close-menu {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+  }
+  .header .logo {
+    order: 1;
+  }
+  .header .logo img {
+    height: 40px;
+  }
+  .header .header-mobile {
+    order: 3;
+    display: flex;
+  }
+  .header .profile {
+    display: none;
+  }
+  .header .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(183, 159, 120, 0.98);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    padding-top: 6rem;
+  }
+  .header .nav::before {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-image: url("/media/Profile.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 2rem;
+    border-radius: 50%;
+    border: 3px solid #d0bd94;
+  }
+  .header .nav .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+  }
+  .header .nav .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+  .header .nav .nav-links a {
+    display: block;
+    font-size: 1.3rem;
+    color: #333333;
+    padding: 0.8rem;
+    transition: all 0.3s ease;
+  }
+  .header .nav .nav-links a:hover {
+    color: #746143;
+    background-color: rgba(208, 189, 148, 0.2);
+    border-radius: 25px;
+  }
+  .header .nav.active {
+    transform: translateX(0);
+  }
+}
+@media (min-width: 769px) {
+  .header .header-mobile {
+    display: none;
+  }
+  .header .profile {
+    display: flex;
   }
 }
 
