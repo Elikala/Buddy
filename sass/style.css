@@ -6,7 +6,7 @@
 
 body {
   font-family: "Laila";
-  background-color: #d0bd94;
+  background-color: #E4D5B4;
   color: #333333;
   line-height: 1.6;
 }
@@ -63,7 +63,7 @@ p {
 }
 .btn.btn-secondary, .btn-secondary.game-button, button.btn-secondary.top-left, .contact-left button.btn-secondary {
   border: 2px solid #B79F78;
-  background-color: #d0bd94;
+  background-color: #E4D5B4;
 }
 .btn.btn-secondary:hover, .btn-secondary.game-button:hover, button.btn-secondary.top-left:hover, .contact-left button.btn-secondary:hover {
   background-color: #B79F78;
@@ -390,33 +390,12 @@ button.top-left a {
   padding-top: 60px;
 }
 
-@media (max-width: 768px) {
-  .animals {
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px; 
-    flex-wrap: wrap; 
-  }
-
-  .animals .cat img,
-  .animals .dog img {
-    width: 120px; 
-  }
-
-  .animals .cat .kassinupp,
-  .animals .dog .koeranupp {
-    margin-top: 20px;
-  }
-}
-
-
 .animals {
   margin-top: 100px;
   display: flex;
   justify-content: space-around;
-  gap: 100px; 
+  gap: 100px;
 }
-
 .animals .cat,
 .animals .dog {
   display: flex;
@@ -438,6 +417,22 @@ button.top-left a {
   margin-top: 20px;
 }
 
+@media (max-width: 768px) {
+  .animals {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .animals .cat img,
+  .animals .dog img {
+    width: 120px;
+  }
+  .animals .cat .kassinupp,
+  .animals .dog .koeranupp {
+    margin-top: 20px;
+  }
+}
 .game-button {
   padding: 20px 35px;
   font-size: 22px;
@@ -594,7 +589,7 @@ button.top-left a {
   }
   header nav .nav-links a:hover {
     color: #746143;
-    background-color: rgba(208, 189, 148, 0.2);
+    background-color: rgba(228, 213, 180, 0.2);
     border-radius: 25px;
   }
   header nav.active {
