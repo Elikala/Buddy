@@ -1,220 +1,39 @@
-/*Värvid mida kasutan play ja kontakt lehel*/
-$myColor: #E8DAB9
-$secondColor: #9D8964
-$titleColor: #000000
-$inputColor: #808080
-$buttontext: #F3E5C5
-
-/*Play ja kontakt htmlil olev font*/
-@font-face
-  font-family: 'Kavivanar-Regular'
-  src: url(Kavivanar-Regular)
-
-/*Mobiilivaate jaoks kohandatud suurus, kontaktformis kaob pilt ära*/
-@media (max-width:800px)
-  .contact-inputs
-    width: 80vw
-  .contact-right
-    display: none
-
-/*Üleüldine kohandus kontakti ja play lehe jaoks*/
-*
-  padding: 0
-  margin: 0
-  box-sizing: border-box
-
-/*Üleüldine taust ja font play ja kontakti lehe jaoks*/
-body
-  font-family: 'Kavivanar-Regular'
-  background-color: $myColor
-
-/*Kontakt lehe kohandused*/
-.container
-  height: 100vh
-  display: flex
-  align-items: center
-  justify-content: space-evenly
-
-/*Kontakt lehe vasakpoolse osa kohandused*/
-.contact-left
-  display: flex
-  flex-direction: column
-  align-items: start
-  gap: 20px
-
-/*Kontaktlehe vasakul pool asuv pealkiri*/
-.contact-left-title h2
-  font-weight: 700
-  color: $titleColor
-  font-size: 60px
-  margin-bottom: 5px
-
-/*Kontaktlehe vasakul pool asuv pealkirja all olev joon*/
-.contact-left-title hr
-  border: none
-  width: 120px
-  height: 5px
-  background-color: $titleColor
-  border-radius: 10px
-  margin-bottom: 20px
-
-/*Kontaktlehe vasakul pool asuvad inputide kohandused*/
-.contact-inputs
-  width: 400px
-  height: 50px
-  border: none
-  border-radius: 10px
-  outline: none
-  padding-left: 25px
-  font-weight: 500
-  color: $inputColor
-
-/*Kontaktlehe vasakul pool asuv sõnumi textarea kohandus*/
-.contact-left textarea
-  height: 140px
-  padding-top: 15px
-
-/*Kontaktlehe vasakul pool asuvate inputide kohal hoverides, styling*/
-.contact-inputs:focus
-  border: 2px solid $secondColor
-
-/*Placeholder input tekstile*/
-.contact-inputs::placeholder
-  color: $inputColor
-/*Kontaktlehe vasakul pool asuva nupu styling*/
-.contact-left button
-  display: flex
-  align-items: center
-  padding: 10px 25px
-  font-size: 16px
-  color: $buttontext
-  gap: 10px
-  border: none
-  border-radius: 30px
-  background-color: $secondColor
-  cursor: pointer
-
-/*Kontaktlehe paremal pool asuva pildi suurus*/
-.contact-right img
-  width: 500px
-
-.contact-left:focus
-  border: 2px solid $titleColor
-
-
-
-button.top-left
-  position: absolute
-  top: 20px
-  left: 20px
-  background-color: $secondColor
-  border: none
-  border-radius: 30px
-  padding: 10px 20px
-  cursor: pointer
-
-button.top-left a
-  text-decoration: none
-  color: $buttontext
-  font-size: 16px
-  display: block
-
-/*Play lehe pealkirja styling */
-.headtitle
-  margin-top: 80px
-  margin-bottom: 40px
-
-  h2
-    font-weight: 700
-    color: $titleColor
-    text-align: center
-    font-size: 40px
-    margin: 0
-/*Play lehe sisu styling*/
-.gamecontainer
-  position: relative
-  min-height: 100vh
-  display: flex
-  flex-direction: column
-  align-items: center
-  padding-top: 60px
-
-.animals
-  margin-top: 100px
-  display: flex
-  justify-content: space-around
-  gap: 200px
-
-  .cat,
-  .dog
-    display: flex
-    flex-direction: column
-    align-items: center
-
-  .cat
-    img
-      width: 150px
-      height: auto
-
-    .kassinupp
-      margin-top: 70px
-  .dog
-    img
-      width: 200px
-      height: auto
-
-    .koeranupp
-      margin-top: 20px
-/*Nupu styling*/
-button
-  display: flex
-  flex-direction: row
-  justify-content: center
-  padding: 20px 35px
-  font-size: 22px
-  color: $buttontext
-  border: none
-  border-radius: 30px
-  background-color: $secondColor
-  cursor: pointer
-
-
-
-
-//Muutujad mida kasutan avalehel
+// Põhimuutujad kogu lehe jaoks
 $primary-color: #d0bd94
 $secondary-color: #B79F78
 $dark-color: #746143
-$text-color: #333333
-$button-text: #F3E5C5
-$body-font: 'Laila', sans-serif
-$container-width: 1200px
+$text-color: #333333  
+$input-color: #808080
 $border-radius: 25px
+$container-width: 1200px
 
+// Üldine reset ja box-sizing
 *
   margin: 0
   padding: 0
   box-sizing: border-box
 
+// Põhilehe stiilid
 body
-  font-family: $body-font
+  font-family: 'Laila', sans-serif
   background-color: $primary-color
   color: $text-color
   line-height: 1.6
 
+  // Play ja kontakt lehekülgedel kasutatakse teist fonti
+  &.special-page
+    font-family: 'Kavivanar-Regular'
+
 // Typography
-h1,
-h2
+h1, h2
   font-weight: 600
   margin-bottom: 1rem
 
 h1
-  font-weight: 600
   font-size: 2.5rem
   text-align: center
 
 h2
-  font-weight: 600
   font-size: 2rem
   margin-bottom: 1.5rem
   text-align: center
@@ -230,6 +49,7 @@ p
   font-weight: 700
   margin-top: 5rem
 
+// Nupud - ühtlustatud stiil
 .btn
   display: inline-block
   font-weight: 500
@@ -237,21 +57,24 @@ p
   border-radius: $border-radius
   padding: 12px 24px
   transition: all 0.3s ease
-  font-family: $body-font
-
+  font-family: inherit
   cursor: pointer
+  color: $text-color
+  
   &.btn-primary
     background-color: $secondary-color
-
+    border: none
+    
     &:hover
       background-color: $dark-color
 
   &.btn-secondary
     border: 2px solid $secondary-color
+    background-color: $primary-color
 
+    
     &:hover
       background-color: $secondary-color
-
 
 // Päise stiil
 header
@@ -270,6 +93,7 @@ header
     ul
       display: flex
       gap: 2rem
+      list-style: none
 
       a
         text-decoration: none
@@ -283,7 +107,7 @@ header
   .profile
     display: flex
 
-// Main content sisu stiil
+// Peamine sisu konteiner
 .main-content
   max-width: $container-width
   margin: 5rem auto
@@ -292,8 +116,7 @@ header
   section
     padding: 40px 0
 
-
-// Hero sektsiooni sisu stiil
+// Hero sektsiooni stiil
 .hero-section
   display: flex
   align-items: center
@@ -327,13 +150,13 @@ header
       max-width: 100%
       height: auto
 
-// about sektsiooni sisu stiil
+// About sektsiooni stiil
 .about-section
   p
     max-width: 800px
     margin: 0 auto
 
-// Steps sektsiooni sisu stiil
+// Steps sektsiooni stiil
 .steps-section
   .steps-container
     display: flex
@@ -354,6 +177,9 @@ header
         background-color: $secondary-color
         border-radius: 50%
         margin: 0 auto 20px
+        display: flex
+        justify-content: center
+        align-items: center
 
         span
           font-size: 2rem
@@ -362,12 +188,13 @@ header
       .step-text
         text-align: center
 
+// Why sektsiooni stiil
 .why-section
   p
     max-width: 800px
     margin: 0 auto
 
-// Kellele see sobib sektsiooni sisu stiil
+// Kellele see sobib sektsiooni stiil
 .audience-section
   .audience-cards
     display: flex
@@ -394,12 +221,13 @@ header
         height: 80px
         margin-bottom: 20px
 
+// Motivation sektsiooni stiil
 .motivation-section
   p
     max-width: 800px
     margin: 0 auto
 
-// CTA sektsiooni sisu stiil
+// CTA sektsiooni stiil
 .cta-section
   text-align: center
 
@@ -409,7 +237,7 @@ header
     .btn
       margin: 0 10px 10px
 
-// Uudiskirja sektsiooni sisu stiil
+// Uudiskirja sektsiooni stiil
 .newsletter-section
   max-width: 800px
   margin: 0 auto
@@ -422,7 +250,6 @@ header
   .newsletter-form
     max-width: 500px
     margin: 0 auto
-
 
     .form-group
       margin-bottom: 20px
@@ -437,10 +264,9 @@ header
         padding: 12px
         border: 1px solid $secondary-color
         border-radius: $border-radius
-        font-family: $body-font
+        font-family: inherit
 
-
-// Jaluse sisu stiil
+// Jaluse stiil
 .main-footer
   background-color: $secondary-color
   padding: 40px 20px
@@ -481,7 +307,146 @@ header
         height: 2rem
         width: 2rem
 
-// Media queries kohandatavaks suuruseks
+// Kontakt lehe stiilid
+.container
+  height: 100vh
+  display: flex
+  align-items: center
+  justify-content: space-evenly
+
+.contact-left
+  display: flex
+  flex-direction: column
+  align-items: start
+  gap: 20px
+
+  &-title
+    h2
+      font-weight: 700
+      color: $text-color
+      font-size: 60px
+      margin-bottom: 5px
+
+    hr
+      border: none
+      width: 120px
+      height: 5px
+      background-color: $text-color
+      border-radius: 10px
+      margin-bottom: 20px
+
+.contact-inputs
+  width: 400px
+  height: 50px
+  border: none
+  border-radius: 10px
+  outline: none
+  padding-left: 25px
+  font-weight: 500
+  color: $input-color
+  
+  &:focus
+    border: 2px solid $secondary-color
+
+  &::placeholder
+    color: $input-color
+
+.contact-left
+  textarea
+    height: 140px
+    padding-top: 15px
+  
+  button
+    @extend .btn
+    @extend .btn-primary
+    display: flex
+    align-items: center
+    padding: 10px 25px
+    font-size: 16px
+    gap: 10px
+    border-radius: 30px
+
+.contact-right
+  img
+    width: 500px
+
+// Play lehe stiilid
+button.top-left
+  @extend .btn
+  @extend .btn-primary
+  position: absolute
+  top: 20px
+  left: 20px
+  padding: 10px 20px
+  
+  a
+    text-decoration: none
+    color: $text-color
+    font-size: 16px
+    display: block
+
+.headtitle
+  margin-top: 80px
+  margin-bottom: 40px
+
+  h2
+    font-weight: 700
+    color: $text-color
+    text-align: center
+    font-size: 40px
+    margin: 0
+
+.gamecontainer
+  position: relative
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+  align-items: center
+  padding-top: 60px
+
+.animals
+  margin-top: 100px
+  display: flex
+  justify-content: space-around
+  gap: 200px
+
+  .cat,
+  .dog
+    display: flex
+    flex-direction: column
+    align-items: center
+
+  .cat
+    img
+      width: 150px
+      height: auto
+
+    .kassinupp
+      margin-top: 70px
+  
+  .dog
+    img
+      width: 200px
+      height: auto
+
+    .koeranupp
+      margin-top: 20px
+
+// Mängu lehekülje nupud
+.game-button
+  @extend .btn
+  @extend .btn-primary
+  padding: 20px 35px
+  font-size: 22px
+
+// Mobiilivaate jaoks kohandused
+@media (max-width: 800px)
+  .contact-inputs
+    width: 80vw
+  
+  .contact-right
+    display: none
+
 @media (max-width: 768px)
   .hero-section
     flex-direction: column
@@ -501,11 +466,11 @@ header
     .step-item
       max-width: 400px
 
-  .header
+  header
     flex-direction: row
     gap: 15px
 
-    .main-nav
+    nav
       .nav-links
         flex-wrap: wrap
 
@@ -521,12 +486,125 @@ header
     .footer-info
       align-items: center
       text-align: center
+      
       p
         text-align: center
 
     .footer-title
       text-align: center
 
+// Mobiilse menüü stiilid
+.header-mobile
+  display: none
+  align-items: center
+  gap: 1rem
+  z-index: 1001
+  cursor: pointer
+
+  .burger-menu img
+    height: 30px
+    width: auto
+    transition: opacity 0.3s ease
+
+  .close-menu
+    display: none
+    position: fixed
+    top: 20px
+    right: 20px
+    
+    img
+      height: 25px
+      width: 25px
+
+  &.active
+    .burger-menu
+      display: none
+    
+    .close-menu
+      display: block
+
+@media (max-width: 768px)
+  header
+    position: relative
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 15px 20px
+
+    .logo
+      order: 1
+      
+      img
+        height: 40px
+
+    .header-mobile
+      order: 3
+      display: flex
+
+    .profile
+      display: none
+
+    nav
+      position: fixed
+      top: 0
+      left: 0
+      width: 100%
+      height: 100vh
+      background-color: rgba($secondary-color, 0.98)
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      align-items: center
+      transform: translateX(100%)
+      transition: transform 0.3s ease-in-out
+      z-index: 1000
+      padding-top: 6rem
+
+      // Lisa profiilipilt menüüsse
+      &::before
+        content: ''
+        display: block
+        width: 80px
+        height: 80px
+        background-image: url('/media/Profile.svg')
+        background-size: contain
+        background-repeat: no-repeat
+        background-position: center
+        margin-bottom: 2rem
+        border-radius: 50%
+
+      .nav-links
+        flex-direction: column
+        align-items: center
+        gap: 1.5rem
+        width: 100%
+
+        li
+          width: 100%
+          text-align: center
+
+        a
+          display: block
+          font-size: 1.3rem
+          color: $text-color
+          padding: 0.8rem
+          transition: all 0.3s ease
+
+          &:hover
+            color: $dark-color
+            background-color: rgba($primary-color, 0.2)
+            border-radius: $border-radius
+
+      &.active
+        transform: translateX(0)
+
+@media (min-width: 769px)
+  header
+    .header-mobile
+      display: none
+
+    .profile
+      display: flex
 
 @media (max-width: 480px)
   .section-title
@@ -561,118 +639,3 @@ header
     .newsletter-form
       .btn
         width: 100%
-
-
-// Mobiilse menüü SASS stiilid
-.header-mobile
-  display: none // Vaikimisi peidetud laiadel ekraanidel
-  align-items: center
-  gap: 1rem
-  z-index: 1001
-  cursor: pointer
-
-
-  .burger-menu img
-    height: 30px
-    width: auto
-    transition: opacity 0.3s ease
-
-  .close-menu
-    display: none
-    position: fixed
-    top: 20px
-    right: 20px
-    img
-      height: 25px
-      width: 25px
-
-  &.active
-    .burger-menu
-      display: none
-    .close-menu
-      display: block
-
-// Mobiilivaate stiilid (max-width: 768px)
-@media (max-width: 768px)
-  .header
-    position: relative
-    display: flex
-    justify-content: space-between
-    align-items: center
-    padding: 15px 20px
-
-    .logo
-      order: 1
-      img
-        height: 40px
-
-    .header-mobile
-      order: 3
-      display: flex
-
-    .profile
-      display: none
-
-    .nav
-      position: fixed
-      top: 0
-      left: 0
-      width: 100%
-      height: 100vh
-      background-color: rgba($secondary-color, 0.98)
-      display: flex
-      flex-direction: column
-      justify-content: flex-start
-      align-items: center
-      transform: translateX(100%)
-      transition: transform 0.3s ease-in-out
-      z-index: 1000
-      padding-top: 6rem
-
-      // Lisa profiilipilt menüüsse
-      &::before
-        content: ''
-        display: block
-        width: 80px
-        height: 80px
-        background-image: url('/media/Profile.png')
-        background-size: contain
-        background-repeat: no-repeat
-        background-position: center
-        margin-bottom: 2rem
-        border-radius: 50%
-        border: 3px solid $primary-color
-
-      .nav-links
-        flex-direction: column
-        align-items: center
-        gap: 1.5rem
-        width: 100%
-
-        li
-          width: 100%
-          text-align: center
-
-        a
-          display: block
-          font-size: 1.3rem
-          color: $text-color
-          padding: 0.8rem
-          transition: all 0.3s ease
-
-          &:hover
-            color: $dark-color
-            background-color: rgba($primary-color, 0.2)
-            border-radius: $border-radius
-
-      &.active
-        transform: translateX(0)
-
-// Desktop vaate stiilid (min-width: 769px)
-@media (min-width: 769px)
-  .header
-    .header-mobile
-      display: none
-
-    .profile
-      display: flex
