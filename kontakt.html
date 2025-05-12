@@ -1,23 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 <head>
+  <!-- Dokumendi metaandmed -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kontaktform </title>
+  <title>Kontaktvorm</title>
+  
+  <!-- Lehe ikoon -->
   <link rel="icon" type="image/x-icon" href="media/favicon.ico">
+  
+  <!-- Stiililehed -->
   <link rel="stylesheet" href="/sass/style.css"/>
+  
+  <!-- Google'i fondid -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- Päise laadimise skript -->
   <script>
-  // Laadib headeri sisu
+  // Laadib päise sisu
   fetch('header.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById('header-placeholder').innerHTML = data;
       
-      // Burgermenüü funktsionaalsus pärast headeri laadimist
+      // Burger-menüü funktsionaalsus pärast päise laadimist
       const burgerMenu = document.querySelector('.burger-menu');
       const closeMenu = document.querySelector('.close-menu');
       const headerMobile = document.querySelector('.header-mobile');
@@ -37,7 +45,7 @@
         document.body.style.overflow = '';
       });
       
-      // Sulgeb menüü kui linki klikitakse
+      // Sulgeb menüü lingi klikkimisel
       document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
           headerMobile.classList.remove('active');
@@ -46,28 +54,51 @@
         });
       });
     });
-</script>
+  </script>
 </head>
 
 <body>
+  <!-- Päise sektsioon -->
   <div id="header-placeholder"></div>
 
-    <div class="container">
-      <form action="https://api.web3forms.com/submit" method="POST" class="contact-left"> <!--Lingib formidega, et kui kasutaja saadab formi siis tuleb teavitus meile meilile-->
-        <div class="contact-left-title"><!--Kontakt form ja vasak poolt lehekülge-->
+  <!-- Peamine sisu -->
+  <main class="container">
+    <!-- Kontaktvormi sektsioon -->
+    <section class="contact-left">
+      <form action="https://api.web3forms.com/submit" method="POST" aria-label="Kontaktvorm">
+        <div class="contact-left-title">
           <h2>Kirjuta meile!</h2>
           <hr>
         </div>
-        <input type="hidden" name="access_key" value="e381d274-f740-4097-8df2-2ce0d3d81630"> <!--Access key, see mis lingib formiga-->
-        <input type="text" name="name" placeholder="Sinu nimi" class="contact-inputs" required><!--Sisesta nimi-->
-        <input type="email" name="email" placeholder="Sinu email" class="contact-inputs" required><!--Sisesta email-->
-        <textarea name="message" placeholder="Sõnum" class="contact-inputs" required></textarea><!--Sisesta sõnum-->
-          <button type="submit">Saada</button> <!--Saada nupp-->
+        
+        <!-- Varjatud vormi väljad -->
+        <input type="hidden" name="access_key" value="e381d274-f740-4097-8df2-2ce0d3d81630">
+        
+        <!-- Vormi sisendväljad -->
+        <div class="form-group">
+          <label for="name" class="sr-only">Sinu nimi</label>
+          <input type="text" id="name" name="name" placeholder="Sinu nimi" class="contact-inputs" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email" class="sr-only">Sinu e-post</label>
+          <input type="email" id="email" name="email" placeholder="Sinu e-post" class="contact-inputs" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="message" class="sr-only">Sõnum</label>
+          <textarea id="message" name="message" placeholder="Sõnum" class="contact-inputs" required></textarea>
+        </div>
+        
+        <!-- Saada nupp -->
+        <button type="submit">Saada</button>
       </form>
+    </section>
 
-      <div class="contact-right">
-        <img src="media/Vector.svg" alt="Kass ja Koer"> <!--Pilt kassist ja koerast-->
-      </div>
-    </div>
+    <!-- Kontaktpildi sektsioon -->
+    <aside class="contact-right">
+      <img src="media/Vector.svg" alt="Kass ja koer" aria-label="Kontaktvormi illustratsioon">
+    </aside>
+  </main>
 </body>
 </html>
