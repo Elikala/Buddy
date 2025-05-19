@@ -117,6 +117,36 @@ header
   .profile
     display: flex
 
+  .header-mobile
+    display: none
+    align-items: center
+    gap: 1rem
+    z-index: 1001
+    cursor: pointer
+
+  .burger-menu img
+    height: 30px
+    width: auto
+    transition: opacity 0.3s ease
+
+  .close-menu
+    display: none
+    position: fixed
+    top: 20px
+    right: 20px
+    
+    img
+      height: 25px
+      width: 25px
+
+  &.active
+    .burger-menu
+      display: none
+    
+    .close-menu
+      display: block
+
+
 // Peamine sisu konteiner
 .main-content
   max-width: $container-width
@@ -477,3 +507,91 @@ button.top-left
 
     .hero-media
       order: 0
+
+  header
+    position: relative
+    flex-direction: row
+    gap: 15px
+    padding: 15px 20px
+
+    .logo
+      order: 1
+      
+      img
+        height: 40px
+
+    .header-mobile
+      order: 3
+      display: flex
+
+    .profile
+      display: none
+
+    nav
+      position: fixed
+      top: 0
+      left: 0
+      width: 100%
+      height: 100vh
+      background-color: rgba($secondary-color, 0.98)
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      align-items: center
+      transform: translateX(100%)
+      transition: transform 0.3s ease-in-out
+      z-index: 1000
+      padding-top: 6rem
+
+      &::before
+        content: ''
+        display: block
+        width: 80px
+        height: 80px
+        background-image: url('/media/Profile.svg')
+        background-size: contain
+        background-repeat: no-repeat
+        background-position: center
+        margin-bottom: 2rem
+        border-radius: 50%
+
+      .nav-links
+        flex-direction: column
+        align-items: center
+        gap: 1.5rem
+        width: 100%
+
+        li
+          width: 100%
+          text-align: center
+
+        a
+          display: block
+          font-size: 1.3rem
+          color: $text-color
+          padding: 0.8rem
+          transition: all 0.3s ease
+
+          &:hover
+            color: $dark-color
+            background-color: rgba($primary-color, 0.2)
+            border-radius: $border-radius
+
+      &.active
+        transform: translateX(0)
+
+  .footer-content
+    flex-direction: column
+    display: flex
+    gap: 2rem
+    align-items: center
+
+    .footer-info
+      align-items: center
+      text-align: center
+      
+      p
+        text-align: center
+
+    .footer-title
+      text-align: center
